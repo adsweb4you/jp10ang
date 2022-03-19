@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light  " [ngClass]="[myclass, myclass2]">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img [src]="myimg" class="logo" [ngStyle]="{'color': col, 'border-radius':'55px'}" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+
+          <li class="nav-item" *ngFor="let menu of menus">
+            <a class="nav-link" href="#" [ngClass]="{'text-danger': menu == 'მთავარი'}">{{menu}}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item" *ngIf="showmenu; else myelse">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+
+          <ng-template  #myelse>
+
+            <li>
+              <a class="nav-link  ">ელს ბლოკი</a>
+          </li>
+          </ng-template>
+
+        
+
+ 
+
+
+          <li class="nav-item">
+           <input type="checkbox" (change)="dark($event)">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div   [ngSwitch]="'es'">
+    <div *ngSwitchCase="'ka'">კა</div>
+    <div *ngSwitchCase="'en'">ენ</div>
+    <div *ngSwitchCase="'es'">ეს</div>
+    <div *ngSwitchDefault>საწყისი</div>
+  </div>

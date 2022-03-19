@@ -1,9 +1,11 @@
- <div>app ტექსტი</div>
+ <app-nav  [myimg]="img"></app-nav>
+ 
+ <div [title]="1 + 1">app ტექსტი</div>
 
  <h1>{{  title == 5 ? 'ჭეშმარიტია' : 'მცდარია'}}</h1>
 
- <img src="{{img}}"    alt="">
+ <img src="{{img}}" class="img-fluid"   alt="">
  
- <h3 style="color: {{colors}};">ივენთი</h3>
+ <!-- <h3 style="color: {{colors}};">ივენთი</h3> -->
 
  <button class="btn" (click)="changecolor()">ფერის შეცვლა</button>
