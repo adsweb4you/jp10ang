@@ -1,0 +1,42 @@
+<div class="col-lg-5 mx-auto p-5">
+
+<form action="" [formGroup]="ContactForm">
+ <!-- <input type="text" class="form-control" #mytitle (input)="typing(mytitle.value)">
+
+ {{backvalue}} -->
+<!-- 
+  <input type="text" class="form-control"  [(ngModel)]="testtitle" name="testtitle" required>
+  <small class="text-danger" > შეიყვანეთ ვალიდური ინფორმაცია</small> -->
+  <!-- <input type="text" class="form-control mb-3" [formControl]="myname" name="myname" required>
+  <small class="text-danger" *ngIf="myname.dirty && myname.invalid"> შეიყვანეთ ვალიდური ინფორმაცია</small>  
+ 
+
+  <input type="text" class="form-control mb-3" [formControl]="email" name="email"  >
+ 
+ 
+  <textarea type="text" class="form-control" [formControl]="text" name="text"  rows="10"></textarea>
+
+ <button class="btn btn-danger" (click)="getdata()">გაგზავნა</button> -->
+
+
+ <input type="text" class="form-control mb-3" formControlName="name"  name="myname">
+<small class="text-danger" *ngIf="name?.invalid && name?.dirty">შეყვანეთ მნიშვნელობა</small>
+
+
+ <input type="text" class="form-control mb-3" formControlName="email"  name="email"  >
+
+
+ 
+ <input type="text" class="form-control mb-3" formControlName="password"  name="password"  >
+
+
+ 
+ <input type="text" class="form-control mb-3" formControlName="confirm_pass"  name="confirm_pass"  >
+
+
+ 
+
+<button class="btn btn-danger" [disabled]="ContactForm.invalid" (click)="getalldata()">გაგზავნა</button>
+
+</form>
+</div>
